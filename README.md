@@ -17,6 +17,6 @@ The user can use `LibRely` to better understand the packages used in a script au
 - `lib_writeme()`: Prepare a markdown file describing the script dependacies and their popularity. This output is designed to be included in a user's supporting ReadMe file.
 
 
-### Python Ecosystems
+### R Ecosystems
 
 - **R**: We were not able to find any Python software packages that address the same functionality as we intend to with ```LibRely```.
