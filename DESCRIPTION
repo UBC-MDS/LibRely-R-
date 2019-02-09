@@ -1,0 +1,31 @@
+Package: librely
+Title: Meta analysis and documentation of R scripts
+Version: 0.0.0.9000
+Authors@R: c(
+     person(given = "Aaron", family = "Quinton", role = c("aut", "cre"), email = "aaron.wquinton@gmail.com"),
+     person(given = "Alex", family = "Hope", role = c("aut"), email = "ahope@ualberta.ca"),
+     person(given = "Zixin", family = "Zhang", role = c("aut"), email = "zxzzhangg@gmail.com"))
+Description: librely provides a collection of functions to aid in the workflow of a data science
+    or software development project. The functions find and report the dependancies and functions 
+    that were used in a R script. These dependancies can also be neatly prepared as a text 
+    document to be included in a project repository.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+Imports: 
+    stringr,
+    dplyr,
+    purrr,
+    ggplot2,
+    tidyr,
+    tibble,
+    readr,
+    forcats
+VignetteBuilder: knitr
+URL: https://github.com/aaronquinton/librely
+BugReports: https://github.com/aaronquinton/librely/issues
