@@ -7,6 +7,10 @@
 | Zixin Zhang     | [@zxzzhangg](https://github.com/zxzzhangg) |
 | Aaron Quinton     | [@aaronquinton](https://github.com/aaronquinton ) |
 
+### Releases
+
+Milestone 1: https://github.com/UBC-MDS/LibRely-R-/releases/tag/V1.0
+
 
 ## Overview
 The `LibRely` package is designed to provide a meta analysis of R scripts to aid in the workflow for a data science or software development project. The functionalities in this package interpret scripts to compile library/module dependancies and prepare summary documentation.
