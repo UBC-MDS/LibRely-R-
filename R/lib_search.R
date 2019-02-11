@@ -1,7 +1,5 @@
-#  Feb 8th, 2019
-#  Zixin Zhang
 #' Find dependant packages
-#' 
+#'
 #' Input a R script to find all the dependant packages used and create a character vector with all of their names.
 #'
 #' @param script a .R file
@@ -11,21 +9,17 @@
 #'
 #' @examples
 #' lib_search("script.R")
-lib_search <- function(script){
+lib_search <- function(path){
 
-  ##' This function takes an input R script and return the libraries that used in this script  
-  ##'
-  ##' Parameters
-  ##' ---------
-  ##' input_path(string): the path to the input .R script
-  ##' 
-  ##' Return
-  ##' --------
-  ##' depen(vector): a vector that stores all the dependencies
-  
-  
-  return(depen)
+  script <- readLines(path)
+
+  library_lines <- script[grep(pattern = "library\\(.*\\)", script)]
+
+  pkgs <- sub(pattern = "library\\((.*)\\).*", "\\1", library_lines)
+
+  return(pkgs)
 }
 
 
 
+library("ggplot2")
