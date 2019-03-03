@@ -1,10 +1,10 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "librely Documentation"
+author: "Alex Hope,Bonnie Zhang,Aaron Quinton"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{librely Documentation}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,50 +16,43 @@ knitr::opts_chunk$set(
 )
 ```
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+librely: Meta analysis of R scripts
+===================================
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+The [librely](https://github.com/UBC-MDS/LibRely-R-) package is designed to provide a meta analysis of R scripts to aid in the workflow for a data science or software development project. The functionalities in this package interpret scripts to compile library/module dependencies, document specific functions imported in the script and measure the length of the script by the number of lines and characters.  
+  
+The user can use LibRely to better understand the packages used in a script authored by someone else. Alternatively, a user can take advantage of the functionalities when preparing the ReadMe documentation in their project. The following functions are included in the LibRely package.  
+  
+  
+  
+`librely` functions
+-----------------------
+To conduct the meta analysis of your R script the package includes the following three functions:
 
-## Vignette Info
+* `lib_search()` : This function finds the packages used in the R script and returns a vector of their names.
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+* `lib_count()` : This function finds the functions used throughout the R script and which package they belonged to. It returns a dataframe of this information.
 
-## Styles
+* `lib_lines()` : This function gives a sense of the size of the script by returning a list of the number of lines and characters in the script.
+  
+  
+  
+Demonstration
+-----------------------
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+```{r}
+library(librely)
 
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
+lib_search("../tests/testthat/file/script_for_test1.R")
 
-## Figures
+lib_count("../tests/testthat/file/script_for_test1.R")
 
-The figure sizes have been customised so that you can easily put two images side-by-side. 
+lib_lines("../tests/testthat/file/script_for_test1.R")
 
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
 
-## More Examples
 
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
 
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
