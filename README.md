@@ -50,7 +50,7 @@ report()
 ```
 The results are shown below.
 
-![alt text](./doc/coverage_result.png)
+![](./doc/coverage_reuslt.png)
 
 
 ### Usage
