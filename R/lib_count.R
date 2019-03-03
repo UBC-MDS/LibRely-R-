@@ -24,24 +24,31 @@ lib_count <- function(path){
   # Load the nessecary libraries
   pkgs <- pkgs[is.element(pkgs, installed.packages())]
 
-  for(pkg in pkgs){
-    require(pkg,character.only=TRUE,quietly=TRUE)
+  if (identical(pkgs, character(0)) ) {
+
+    return(cat("This is an empty script"))
   }
 
-  # Find and create dataframe of packages and functions
-  pkg_list <- map(.x = paste("package:", pkgs, sep = ""), ls)
-  names(pkg_list) <- pkgs
+  else{
 
-  pkg_df <- as_tibble(suppressWarnings(map_df(pkg_list, ~as.data.frame(.x), .id= "package_name")) %>%
-              rename( "function_name" = ".x"))
+    for(pkg in pkgs){
+      require(pkg,character.only=TRUE,quietly=TRUE)
+    }
 
-  # Count the usage of functions in the script
-  pkg_df <- pkg_df %>%
-    mutate(count = str_count(pattern = paste(function_name,"\\(", sep = ""),
-                             string = paste(script, collapse = ""))) %>%
-    filter(count > 0)
+    # Find and create dataframe of packages and functions
+    pkg_list <- map(.x = paste("package:", pkgs, sep = ""), ls)
+    names(pkg_list) <- pkgs
 
+    pkg_df <- as_tibble(suppressWarnings(map_df(pkg_list, ~as.data.frame(.x), .id= "package_name")) %>%
+                          rename( "function_name" = ".x"))
 
+    # Count the usage of functions in the script
+    pkg_df <- pkg_df %>%
+      mutate(count = str_count(pattern = paste(function_name,"\\(", sep = ""),
+                               string = paste(script, collapse = ""))) %>%
+      filter(count > 0)
 
-  return(pkg_df)
+    return(pkg_df)
+
+  }
 }
