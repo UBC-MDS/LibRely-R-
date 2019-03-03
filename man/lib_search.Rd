@@ -4,7 +4,7 @@
 \alias{lib_search}
 \title{Find dependant packages}
 \usage{
-lib_search(script)
+lib_search(path)
 }
 \arguments{
 \item{script}{a .R file}

@@ -4,7 +4,7 @@
 \alias{lib_count}
 \title{Report and count the functions used}
 \usage{
-lib_count(script)
+lib_count(path)
 }
 \arguments{
 \item{script}{a .R file}
