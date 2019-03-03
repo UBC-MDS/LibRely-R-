@@ -11,6 +11,8 @@
 
 [Milestone 1 Release](https://github.com/UBC-MDS/LibRely-R-/releases/tag/V1.0)
 
+[Milestone 3 Release](https://github.com/UBC-MDS/LibRely-R-/tree/V2.0)
+
 
 ### Overview
 The `LibRely` package is designed to provide a meta analysis of R scripts to aid in the workflow for a data science or software development project. The functionalities in this package interpret scripts to compile library/module dependencies, document specific functions imported in the script and measure the length of the script by the number of lines and characters.
