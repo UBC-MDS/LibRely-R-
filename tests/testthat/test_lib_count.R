@@ -20,8 +20,8 @@ test_that("If the function has correct output", {
 
 test_that("In case the input is not a .R script", {
 
-  expect_error(lib_count("test.txt"))
-  expect_error(lib_count("test.pdf"))
+  expect_equal(lib_count("file/script_for_test1.txt"), "The input should be a .R script")
+  expect_equal(lib_count("file/script_for_test1.pdf"), "The input should be a .R script")
 
 })
 
@@ -35,6 +35,6 @@ test_that("In case the input is not a path", {
 
   expect_error(lib_count(123))
   expect_error(lib_count(c(1,2,3)))
-  expect_error(lib_count("This is a string"))
+  expect_equal(lib_count("This is a string"), "The input should be a .R script")
   expect_error(lib_count(data.frame(a=c(1,2),b=c("one","second"))))
 })
