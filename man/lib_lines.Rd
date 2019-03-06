@@ -16,7 +16,3 @@ markdown
 Input a R script to prepare a markdown file documenting the dependancies. These can be included in a project
 Readme file.
 }
-\examples{
-lib_lines("script.R")
-
-}

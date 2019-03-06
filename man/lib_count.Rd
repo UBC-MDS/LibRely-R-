@@ -15,6 +15,3 @@ dataframe
 \description{
 Input a R script to find and count all the functions used in each respective package
 }
-\examples{
-lib_count("script.R")
-}

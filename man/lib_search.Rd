@@ -15,6 +15,3 @@ vector
 \description{
 Input a R script to find all the dependant packages used and create a character vector with all of their names.
 }
-\examples{
-lib_search("script.R")
-}
