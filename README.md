@@ -13,7 +13,6 @@
 
 [Milestone 3 Release](https://github.com/UBC-MDS/LibRely-R-/tree/V2.0)
 
-
 ### Overview
 The `LibRely` package is designed to provide a meta analysis of R scripts to aid in the workflow for a data science or software development project. The functionalities in this package interpret scripts to compile library/module dependencies, document specific functions imported in the script and measure the length of the script by the number of lines and characters.
 
@@ -52,18 +51,17 @@ report()
 ```
 The results are shown below.
 
-![](./doc/coverage_reuslt.png)
-
+![](./doc/coverage_result.png)
 
 ### Usage
-This is a simple usage case of our package in R.
+This is a simple usage case of our package in R under the `LibRely-R-` working directory.
 ```r
-library(LibRely)
+> library(librely)   
 
-> lib_search("tests/script_for_test1.R")
+> lib_search("tests/testthat/file/script_for_test1.R")
 [1] "dplyr"  "tibble"
 
-> lib_count("tests/script_for_test1.R")
+> lib_count("tests/testthat/file/script_for_test1.R")
 # A tibble: 4 x 3
   package_name function_name count
   <chr>        <chr>         <int>
@@ -72,7 +70,7 @@ library(LibRely)
 3 dplyr        tibble            1
 4 tibble       tibble            1
 
-> lib_lines("tests/script_for_test1.R")
+> lib_lines("tests/testthat/file/script_for_test1.R")
 $num_line
 [1] 7
 
