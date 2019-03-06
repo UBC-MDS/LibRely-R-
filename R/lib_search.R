@@ -7,19 +7,23 @@
 #' @return vector
 #' @export
 #'
-#' @examples
-#' lib_search("script.R")
 lib_search <- function(path){
+  if(grepl(".R", path) == TRUE& is.character(path) == TRUE & file.exists(path) == TRUE){
 
-  script <- readLines(path)
+    script <- readLines(path)
 
-  library_lines <- script[grep(pattern = "library\\(.*\\)", script)]
+    library_lines <- script[grep(pattern = "library\\(.*\\)", script)]
 
-  pkgs <- sub(pattern = "library\\((.*)\\).*", "\\1", library_lines)
+    pkgs <- sub(pattern = "library\\((.*)\\).*", "\\1", library_lines)
 
-  return(pkgs)
+    return(pkgs)
+  }
+  else{
+    return("The input should be a .R script")
+  }
+
 }
 
 
 
-library("ggplot2")
+
