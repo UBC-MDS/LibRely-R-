@@ -7,23 +7,27 @@
 #' @return dataframe
 #' @export
 #'
-#' @examples
-#' lib_count("script.R")
+
 lib_count <- function(path){
   suppressPackageStartupMessages(require(tidyverse))
+  if(grepl(".R", path) == TRUE & is.character(path) == TRUE & file.exists(path) == TRUE){
+    script <- readLines(path)
+  }else{
+    return("The input should be a .R script")
+  }
 
-  # Code to find loaded packages. Replace with lib_search??
-  script <- readLines(path)
+
   library_lines <- script[grep(pattern = "library\\(.*\\)", script)]
   pkgs <- sub(pattern = "library\\((.*)\\).*", "\\1", library_lines)
 
-  # Confirm all packages are installed, otherwise return a vector of pkgs to install
+    # Confirm all packages are installed, otherwise return a vector of pkgs to install
   missing_pkgs <- pkgs[!is.element(pkgs, installed.packages())]
 
 
-  # Load the nessecary libraries
+    # Load the nessecary libraries
   pkgs <- pkgs[is.element(pkgs, installed.packages())]
 
+  # to check with empty script
   if (identical(pkgs, character(0)) ) {
 
     return(cat("This is an empty script"))
