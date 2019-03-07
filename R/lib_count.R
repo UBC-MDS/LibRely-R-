@@ -48,7 +48,7 @@ lib_count <- function(path){
 
     # Count the usage of functions in the script
     pkg_df <- pkg_df %>%
-      mutate(count = str_count(pattern = paste(function_name,"\\(", sep = ""),
+      mutate(count = stringr::str_count(pattern = paste(function_name,"\\(", sep = ""),
                                string = paste(script, collapse = ""))) %>%
       filter(count > 0)
 
