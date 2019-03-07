@@ -40,10 +40,10 @@ lib_count <- function(path){
     }
 
     # Find and create dataframe of packages and functions
-    pkg_list <- map(.x = paste("package:", pkgs, sep = ""), ls)
+    pkg_list <- purrr::map(.x = paste("package:", pkgs, sep = ""), ls)
     names(pkg_list) <- pkgs
 
-    pkg_df <- as_tibble(suppressWarnings(map_df(pkg_list, ~as.data.frame(.x), .id= "package_name")) %>%
+    pkg_df <- as_tibble(suppressWarnings(purrr::map_df(pkg_list, ~as.data.frame(.x), .id= "package_name")) %>%
                           rename( "function_name" = ".x"))
 
     # Count the usage of functions in the script
