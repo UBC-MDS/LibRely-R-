@@ -1,4 +1,7 @@
+[![Build Status](https://travis-ci.org/UBC-MDS/LibRely-R-.svg?branch=master)](https://travis-ci.org/UBC-MDS/LibRely-R-)
+
 # LibRely (R)
+Latest Update Date: 2019 March
 
 ### Collaborators
 | Name | GitHub Handle |
@@ -42,17 +45,6 @@ You can install the released version of `LibRely` from [CRAN](https://CRAN.R-pro
 devtools::install_github("UBC-MDS/LibRely")
 ```
 
-### Branch Coverage Test
-We use covr package for branch test. You can go to `LibRely.Rproj` and run the following command lines
-```
-install.packages("covr") # if you don't have it installed
-library(covr)
-report()
-```
-The results are shown below.
-
-![](./doc/coverage_result.png)
-
 ### Usage
 This is a simple usage case of our package in R under the `LibRely-R-` working directory.
 ```r
@@ -77,6 +69,17 @@ $num_line
 $num_char
 [1] 193
 ```
+
+### Branch Coverage Test
+We use covr package for branch test. You can go to `LibRely.Rproj` and run the following command lines
+```
+install.packages("covr") # if you don't have it installed
+library(covr)
+report()
+```
+The results are shown below.
+
+![](./doc/coverage_result.png)
 
 ### R Ecosystems
 
