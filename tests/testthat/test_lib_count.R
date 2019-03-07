@@ -5,8 +5,7 @@ input1 <- "file/script_for_test1.R"
 input3 <- "file/script_for_test3.R"
 
 # expected output: a dataframe of the package, function and count
-library(tidyverse)
-exp_output1 <- tibble(package_name = c("dplyr", "dplyr","dplyr","tibble"),
+exp_output1 <- tibble::tibble(package_name = c("dplyr", "dplyr","dplyr","tibble"),
                           function_name = c("mutate", "summarize_all","tibble","tibble"),
                           count = as.integer(c(1,1,1,1)))
 

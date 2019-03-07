@@ -4,7 +4,7 @@
 \alias{lib_lines}
 \title{Document the dependancies}
 \usage{
-lib_lines(script)
+lib_lines(path)
 }
 \arguments{
 \item{script}{a .R file}
