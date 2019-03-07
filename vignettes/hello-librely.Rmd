@@ -20,11 +20,11 @@ librely: Meta analysis of R scripts
 ===================================
 
 The [librely](https://github.com/UBC-MDS/LibRely-R-) package is designed to provide a meta analysis of R scripts to aid in the workflow for a data science or software development project. The functionalities in this package interpret scripts to compile library/module dependencies, document specific functions imported in the script and measure the length of the script by the number of lines and characters.  
-  
+
 The user can use LibRely to better understand the packages used in a script authored by someone else. Alternatively, a user can take advantage of the functionalities when preparing the ReadMe documentation in their project. The following functions are included in the LibRely package.  
-  
-  
-  
+
+
+
 `librely` functions
 -----------------------
 To conduct the meta analysis of your R script the package includes the following three functions:
@@ -34,13 +34,13 @@ To conduct the meta analysis of your R script the package includes the following
 * `lib_count()` : This function finds the functions used throughout the R script and which package they belonged to. It returns a dataframe of this information.
 
 * `lib_lines()` : This function gives a sense of the size of the script by returning a list of the number of lines and characters in the script.
-  
-  
-  
+
+
+
 Demonstration
 -----------------------
 
-```{r}
+```
 library(librely)
 
 lib_search("tests/testthat/file/script_for_test1.R")
@@ -50,9 +50,3 @@ lib_count("tests/testthat/file/script_for_test1.R")
 lib_lines("tests/testthat/file/script_for_test1.R")
 
 ```
-
-
-
-
-
-
