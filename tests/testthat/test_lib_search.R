@@ -22,12 +22,6 @@ test_that("If user specifies an additional argument, it throws an error", {
 
 })
 
-test_that("In case the input is not a string", {
-
-  expect_error(lib_search(123))
-  expect_error(lib_search(c(1,2,3)))
-})
-
 
 test_that("test if the the ouput is correct", {
 

@@ -30,10 +30,3 @@ test_that("If user specifies an additional argument, it throws an error", {
 
 })
 
-test_that("In case the input is not a path", {
-
-  expect_error(lib_count(123))
-  expect_error(lib_count(c(1,2,3)))
-  expect_equal(lib_count("This is a string"), "The input should be a .R script")
-  expect_error(lib_count(data.frame(a=c(1,2),b=c("one","second"))))
-})

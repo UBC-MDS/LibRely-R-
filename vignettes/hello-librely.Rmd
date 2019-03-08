@@ -1,6 +1,6 @@
 ---
 title: "librely Documentation"
-author: "Alex Hope,Bonnie Zhang,Aaron Quinton"
+author: "Alex Hope, Bonnie Zhang, Aaron Quinton"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -40,13 +40,13 @@ To conduct the meta analysis of your R script the package includes the following
 Demonstration
 -----------------------
 
-```
+```{r}
 library(librely)
 
-lib_search("tests/testthat/file/script_for_test1.R")
+lib_search("../tests/testthat/file/script_for_test1.R")
 
-lib_count("tests/testthat/file/script_for_test1.R")
+lib_count("../tests/testthat/file/script_for_test1.R")
 
-lib_lines("tests/testthat/file/script_for_test1.R")
+lib_lines("../tests/testthat/file/script_for_test1.R")
 
 ```

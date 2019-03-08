@@ -19,12 +19,6 @@ test_that("If user specifies an additional argument, it throws an error", {
 
 })
 
-test_that("In case the input is not a string", {
-
-  expect_error(lib_lines(123))
-  expect_error(lib_lines(c(1,2,3)))
-})
-
 
 test_that("test if the the ouput is correct", {
   expect_equal(lib_lines(input1), exp_output1)

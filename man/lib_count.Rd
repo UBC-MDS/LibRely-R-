@@ -7,7 +7,7 @@
 lib_count(path)
 }
 \arguments{
-\item{script}{a .R file}
+\item{path}{a .R file}
 }
 \value{
 dataframe
