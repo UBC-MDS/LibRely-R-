@@ -15,7 +15,7 @@ lib_count <- function(path){
 
   suppressPackageStartupMessages(require(tidyverse))
 
-  tryCatch({
+
     script <- readLines(path)
 
     library_lines <- script[grep(pattern = "library\\(.*\\)", script)]
@@ -55,10 +55,4 @@ lib_count <- function(path){
 
       return(pkg_df)
     }
-  },
-
-  error = function(c) "Error",
-  warning = function(c) "Warning",
-  message = function(c) "Message"
-  )
-}
+  }

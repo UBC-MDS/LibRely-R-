@@ -14,7 +14,7 @@ lib_lines <- function(path){
   if(!grepl(".R", path)) return("The input should be a .R script")
   if(!file.exists(path)) return("The file does not exist")
 
-  tryCatch({
+
     script <- readLines(path)
     script <- script[which(script!="")]     # delete the blank space
     script <- script[which(!grepl("^#", script))]    # delete the comment lines
@@ -29,10 +29,4 @@ lib_lines <- function(path){
     a$num_line <- num_line
     a$num_char <- num_char
     return(a)
-    },
-
-    error = function(c) "Error",
-    warning = function(c) "Warning",
-    message = function(c) "Message"
-  )
 }

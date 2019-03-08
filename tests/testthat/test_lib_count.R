@@ -12,7 +12,7 @@ exp_output1 <- tibble::tibble(package_name = c("dplyr", "dplyr","dplyr","tibble"
 
 test_that("If the function has correct output", {
 
-  #expect_equal(lib_count(input1), exp_output1)
+  expect_equal(lib_count(input1), exp_output1)
   expect_equal(lib_count(input3), NULL)
 
 })
