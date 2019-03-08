@@ -11,7 +11,7 @@
 lib_count <- function(path){
 
   if(!grepl(".R", path)) return("The input should be a .R script")
-  if(!file.exists(path)) return("The file does not exist")
+
 
   suppressPackageStartupMessages(require(tidyverse))
 
