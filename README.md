@@ -42,12 +42,13 @@ The user can use `LibRely` to better understand the packages used in a script au
 ### Installation
 You can install the released version of `LibRely` from [CRAN](https://CRAN.R-project.org) in R with:
 ```
-devtools::install_github("UBC-MDS/LibRely")
+devtools::install_github("UBC-MDS/librely")
 ```
 
 ### Usage
 This is a simple usage case of our package in R under the `LibRely-R-` working directory.
 ```r
+> devtools::load_all()
 > library(librely)   
 
 > lib_search("tests/testthat/file/script_for_test1.R")
